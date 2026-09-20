@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from .models import Livro, Emprestimo, Usuario
 from .serializers import LivroSerializer, EmprestimoSerializer, UsuarioSerializer
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 
 class LivrosMaisEmprestadosView(APIView):
     def get(self, request):
@@ -22,7 +23,7 @@ class LivrosMaisEmprestadosView(APIView):
         return Response(dados)
 
 class UsuarioViewSet(viewsets.ModelViewSet):
-    queryset = Usuario.object.all()
+    queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
 
 class LivroViewSet(viewsets.ModelViewSet):
@@ -32,3 +33,4 @@ class LivroViewSet(viewsets.ModelViewSet):
 class EmprestimoViewSet(viewsets.ModelViewSet):
     queryset = Emprestimo.objects.all()
     serializer_class = EmprestimoSerializer
+    permission_classes = [IsAuthenticated]
