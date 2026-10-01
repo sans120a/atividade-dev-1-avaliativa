@@ -1,8 +1,8 @@
 from rest_framework.views import APIView
 from django.db.models import Count
 from rest_framework.response import Response
-from .models import Livro, Emprestimo, Usuario
-from .serializers import LivroSerializer, EmprestimoSerializer, UsuarioSerializer
+from .models import Livro, Emprestimo, Usuario, Categoria, Autor
+from .serializers import LivroSerializer, EmprestimoSerializer, UsuarioSerializer, CategoriaSerializer, AutorSerializer
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
@@ -34,3 +34,11 @@ class EmprestimoViewSet(viewsets.ModelViewSet):
     queryset = Emprestimo.objects.all()
     serializer_class = EmprestimoSerializer
     permission_classes = [IsAuthenticated]
+
+class CategoriaViewSet(viewsets.ModelViewSet):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
+
+class AutorViewSet(viewsets.ModelViewSet):
+    queryset = Autor.objects.all()
+    serializer_class = AutorSerializer
