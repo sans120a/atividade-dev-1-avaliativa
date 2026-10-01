@@ -4,11 +4,16 @@
 
 ## Instruções de instalação e execução do ambiente:
 ``` shell
+# clone os arquivos do repositório.
 git clone https://github.com/sans120a/atividade-dev-1-avaliativa.git
 cd atividade-dev-1-avaliativa
+
+# realize as instalações e preparação do venv.
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+
+# faça o migrate para o banco de dados, crie um usuário e faça e inicie o servidor.
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
