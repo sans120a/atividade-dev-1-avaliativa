@@ -45,7 +45,7 @@ class Livro(models.Model):
 
 class Usuario(models.Model):
     nome = models.CharField(max_length=100)
-    idade = models.IntegerField()
+    data_nascimento = models.DateField()
     cpf = models.CharField(max_length=11, unique=True)
 
     def __str__(self):
