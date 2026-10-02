@@ -150,7 +150,7 @@ python manage.py runserver
     {
         "id": 1,
         "nome": "Haian",
-        "idade": 19,
+        "data_nascimento": "2000-6-15"
         "cpf": "12345678912"
     }
 ]
@@ -160,7 +160,7 @@ python manage.py runserver
 ``` JSON
 {
     "nome": "Haian",
-    "idade": 19,
+    "data_nascimento": "2000-6-15"
     "cpf": "12345678912"
 }
 
@@ -186,7 +186,7 @@ python manage.py runserver
     "usuario_detalhes": {
         "id": 1,
         "nome": "Haian",
-        "idade": 19,
+        "data_nascimento": "2000-6-15",
         "cpf": "12345678912"
     },
     "data_realizada": "2026-10-01",
